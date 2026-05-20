@@ -15,11 +15,11 @@ if (!BOT_TOKEN) {
 storage.initDb();
 const bot = createBot(BOT_TOKEN, storage, scraper);
 
-bot.launch().then(() => {
-  console.log('Bot started');
-  runCheck(bot, storage, scraper, notifier);
-  startScheduler(bot, storage, scraper, notifier);
-});
+bot.launch();
+console.log('Bot started');
+runCheck(bot, storage, scraper, notifier);
+startScheduler(bot, storage, scraper, notifier);
+
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
