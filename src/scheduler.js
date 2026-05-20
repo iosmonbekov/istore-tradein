@@ -40,10 +40,10 @@ async function runCheck(bot, storage, scraper, notifier) {
 
 function startScheduler(bot, storage, scraper, notifier) {
   // every 12 hours at minute 0
-  cron.schedule('0 * * * *', () => {
+  cron.schedule('*/10 * * * *', () => {
     runCheck(bot, storage, scraper, notifier);
   });
-  console.log('Scheduler started — checks every hour');
+  console.log('Scheduler started — checks every 10 minutes');
 }
 
 module.exports = { runCheck, startScheduler };
