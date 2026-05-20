@@ -1,12 +1,17 @@
-app = "istore-tradein-notifier"
-primary_region = "fra"
+# fly.toml app configuration file generated for istore-tradein-notifier on 2026-05-20T20:23:22+06:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'istore-tradein-notifier'
+primary_region = 'fra'
 
 [build]
 
 [env]
-  NODE_ENV = "production"
+  NODE_ENV = 'production'
 
 [[vm]]
-  memory = "256mb"
-  cpu_kind = "shared"
+  memory = '256mb'
+  cpu_kind = 'shared'
   cpus = 1
